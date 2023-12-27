@@ -1,5 +1,7 @@
 @baseURL = http://localhost:3333
 
+@authToken = {{authenticate.response.body.access_token}}
+
 # @name create_account
 POST {{baseURL}}/accounts
 Content-Type: application/json
@@ -17,6 +19,18 @@ POST {{baseURL}}/sessions
 Content-Type: application/json
 
 {
-  "email": "",
-  "password": ""
+  "email": "george@example.com",
+  "password": "123456"
+}
+
+###
+
+# @name create_question
+POST {{baseURL}}/questions
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "How to create a question?",
+  "content": "I'm trying to create a question using the API, but I'm not sure how to do it. Can someone help me?"
 }
