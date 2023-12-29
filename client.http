@@ -31,6 +31,13 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "title": "How to create a question?",
+  "title": "How to create a question? 2",
   "content": "I'm trying to create a question using the API, but I'm not sure how to do it. Can someone help me?"
 }
+
+###
+
+# @name fetch_recent_questions
+GET {{baseURL}}/questions
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
